@@ -1,0 +1,15 @@
+{
+  // Static-asset Worker: `next build` emits ./out, Wrangler uploads it as-is.
+  // This file also stops `wrangler deploy` from auto-detecting Next.js and
+  // running the OpenNext server adapter, which cannot build a static export.
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "vulncascade",
+  "compatibility_date": "2026-09-03",
+  "assets": {
+    "directory": "./out",
+    "not_found_handling": "404-page"
+  },
+  "observability": {
+    "enabled": true
+  }
+}
