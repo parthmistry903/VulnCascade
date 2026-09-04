@@ -1,0 +1,14 @@
+# Cloudflare Pages / Netlify header rules for the static demo build.
+# Next.js `headers()` in next.config.mjs does not apply to `output: "export"`,
+# so the same policy is declared here for the static host to serve.
+/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: no-referrer
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
+  # 'unsafe-inline' is required for the bootstrap scripts Next.js inlines into
+  # every exported page. connect-src is 'self' only: the demo makes no requests.
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob:; connect-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'
+
+/_next/static/*
+  Cache-Control: public, max-age=31536000, immutable

@@ -1,0 +1,40 @@
+{
+  "name": "vulncascade",
+  "version": "1.0.0",
+  "private": true,
+  "description": "CVE Dependency Risk Cascade Mapper \u2014 parses dependency manifests, queries Google OSV, and maps blast radius across the dependency graph.",
+  "scripts": {
+    "dev": "next dev",
+    "dev:live": "NEXT_PUBLIC_DEMO_MODE=false next dev",
+    "build": "next build",
+    "build:live": "NEXT_PUBLIC_DEMO_MODE=false next build",
+    "start": "NEXT_PUBLIC_DEMO_MODE=false next start",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "d3": "^7.9.0",
+    "lucide-react": "^0.468.0",
+    "next": "16.2.9",
+    "pg": "^8.13.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/d3": "^7.4.3",
+    "@types/node": "^20.17.12",
+    "@types/pg": "^8.11.10",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "docx": "^9.5.1",
+    "eslint": "^9.39.1",
+    "eslint-config-next": "16.2.9",
+    "typescript": "^5.7.2",
+    "vitest": "^4.1.9"
+  },
+  "overrides": {
+    "postcss": "^8.5.15"
+  }
+}
