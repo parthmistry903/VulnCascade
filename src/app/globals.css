@@ -750,6 +750,87 @@ g[role="button"]:focus-visible circle {
   stroke-width: 6 !important;
 }
 
+.graph-status-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 3px solid var(--border);
+  background: var(--accent-blue);
+  padding: 6px 10px;
+}
+
+.graph-clear-filters {
+  border: 2px solid var(--border);
+  background: var(--surface);
+  color: var(--text-primary);
+  cursor: pointer;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 3px 8px;
+}
+
+.graph-clear-filters:hover {
+  background: var(--accent-yellow);
+  color: var(--background);
+}
+
+.graph-zoom-controls {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 4;
+  display: grid;
+  gap: 6px;
+}
+
+.graph-zoom-controls .neo-button {
+  width: 38px;
+  min-height: 38px;
+  padding: 0;
+}
+
+.graph-empty-state {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 5;
+  display: grid;
+  gap: 10px;
+  justify-items: center;
+  width: min(360px, calc(100% - 32px));
+  transform: translate(-50%, -50%);
+  border: 3px solid var(--border);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  padding: 18px;
+  text-align: center;
+}
+
+.graph-hint {
+  border-top: 3px solid var(--border);
+  padding: 8px 10px;
+  text-align: center;
+}
+
+.graph-node:focus {
+  outline: none;
+}
+
+.graph-node text.node-label,
+.graph-node circle {
+  transition: opacity 0.18s ease;
+}
+
+.graph-links line {
+  transition: opacity 0.18s ease, stroke 0.18s ease, stroke-width 0.18s ease;
+}
+
+.minimap-viewport {
+  pointer-events: none;
+}
+
 .graph-tooltip {
   position: absolute;
   z-index: 6;
@@ -1251,6 +1332,18 @@ tr:last-child td {
 
   .detail-panel {
     width: 100%;
+  }
+
+  .graph-zoom-controls {
+    top: auto;
+    bottom: 10px;
+    left: 10px;
+    right: auto;
+    grid-auto-flow: column;
+  }
+
+  .graph-hint {
+    font-size: 0.72rem;
   }
 
   .minimap {
